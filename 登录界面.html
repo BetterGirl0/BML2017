@@ -1,0 +1,111 @@
+<!doctype html>
+<meta charset="utf-8">
+<html lang="en">
+<head>
+	<title>登录界面</title>
+</head>
+<style type="text/css">
+.ground
+{
+	height:400px;
+	width:300px;
+	padding:50px;
+	margin:50px auto;
+	background-image: url("backg.jpg");
+	border:10px solid #FF7F50;
+	outline-style: ridge;
+	background-size:308px*409px;
+}
+h1
+{
+	font-size: 28px;
+	font-style: italic;
+	color:	#FF00FF;
+	font-family: "方正姚体"
+}
+form
+{
+	margin-top:150px;
+	margin-left: 20px;
+}
+li
+{
+	color:black;
+	font-style: solid;
+	font-family: "隶书";
+	font-size: 22px;
+	line-height: 50px;
+	list-style-type: none;
+}
+input
+{
+	height:21px;
+	width: 150px;
+	padding-left: 10px;
+	outline:none;
+}
+.submit
+{
+	margin-top:8%;
+	margin-left: 40%;
+	height:30px;
+	width:50px;
+	background: #DDA0DD;
+	color:black;
+}
+.submit:hover
+{
+	margin-top:6%;
+	margin-left: 36%;
+	height:40px;
+	width:60px;
+	background: #880000;
+}
+</style>
+<script type="text/javascript">
+function judge(){
+ var userName=document.getElementById("name").value;
+ var password=document.getElementById("password").value;
+ var regUserName = /^[a-zA-Z0-9]+$/;
+ var regPassWord = /^[a-zA-Z/*]+$/;
+ if(userName.trim()=="" ||password.trim()=="")
+{
+	alert("友情提示：用户名或密码不可以为空哦^_^");
+		return false;
+}
+else if(userName.length>12||password.length>24)
+{
+	alert("请填写正确的用户名和密码^_^");
+	 return false;
+}
+ else if(!regUserName.test(userName))
+ {
+ 	alert("请填写正确的用户名!(最长12位,只能为数字或字母)");
+ 		return false;
+ }
+ else if(!regPassWord.test(password))
+ {
+ 	alert("请填写正确的密码~(最长24位,只能为数字或字母或*或?)");
+ 		return false;
+ }
+ else
+ {
+ 	alert("提交成功^_^");
+ 	return true;
+ }
+}
+
+</script>
+<body background="back.gif";>
+<div class="ground">
+<h1 class="line">Welcome^_^</h1>
+		<form onsubmit="return judge();">
+			<li>账号:
+			<input  class="name" type="text" name="name" id="name">
+			<li>密码:
+			<input  class="password" type="password" name="password" id="password">
+			<input class="submit" type="submit">
+		</form>
+</div>
+</body>
+<ml>
